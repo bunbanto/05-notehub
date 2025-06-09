@@ -1,11 +1,9 @@
 import axios from 'axios';
 import type { Note } from '../types/note';
 
-// const API_KEY = import.meta.env.VITE_NOTEHUB_TOKEN;
+const KEY = import.meta.env.VITE_NOTEHUB_TOKEN;
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api/notes';
-axios.defaults.headers.common[
-  'Authorization'
-] = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJ1bmJhbnRvQGdtYWlsLmNvbSIsImlhdCI6MTc0OTQ3NjUxM30.xq_3TQM8KSOAjklwbWRd_QWwn5-8TmA9ZZQ7NLo9FS8`;
+axios.defaults.headers.common['Authorization'] = `Bearer ${KEY}`;
 axios.defaults.headers.common['Accept'] = 'application/json';
 
 interface FetchNotesHTTPResponse {
