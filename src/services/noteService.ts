@@ -43,11 +43,7 @@ export async function fetchNotes({
   return response.data;
 }
 
-export async function createNote({
-  title,
-  content = '',
-  tag = 'Todo',
-}: CreateNoteParams) {
+export async function createNote({ title, content, tag }: CreateNoteParams) {
   const response = await axios.post<Note>('', {
     title,
     content,
